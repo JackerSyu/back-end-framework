@@ -28,3 +28,71 @@
     <h1>welcome !</h1>
 @endsection
 ```
+
+### Controller 
+
+`$ php artisan make:controller "name"`
+
+- check out app/Http/Controllers
+
+```php
+class PagesController extends Controller
+{
+    public function home ()
+    {
+        $tasks = [
+            'Go to the school',
+            'Go to the store',
+            'Go to work'
+        ];
+    
+        return view('welcome', [
+            'tasks' => $tasks,
+            'foo' => 'Timothy'
+        ]); 
+    }
+
+    public function about ()
+    {
+        return view('about');
+    }
+
+    public function contact()
+    {
+        return view('contact');
+    }
+}
+
+```
+
+- change the web.php in routes 
+
+```php
+Route::get('/', 'PagesController@home');
+
+Route::get('/about', 'PagesController@about');
+
+Route::get('/contact', 'PagesController@contact');
+
+```
+
+
+### Migration Problem 
+
+when `$ php artisan migrate `
+
+    Syntax error or access violation: 1071 Specified key was too long; max key length is 767 bytes (SQL: alter table `users` add unique `users_email_unique`(`email`))
+
+
+- go to app/provider/AppServiceProvider.php
+
+add `Schema::defaultStringLength(191);` in the function boot
+
+`use Illuminate\Support\Facades\Schema;`
+
+### Migration instructions
+
+`php artisan migrate`
+`php artisan migrate:rollback` to undo the last vesion of database
+
+`php artisan migrate:fresh` to update your change
