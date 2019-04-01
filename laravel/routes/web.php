@@ -12,5 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('frontend/welcome', ['com' => '大帥哥', 'name' => '徐崇佑']);
+    return view('welcome');
+});
+
+Route::get('/contact', function () {
+    return view('contact');
+});
+
+Route::get('/about', function () {
+    return view('about');
 });
