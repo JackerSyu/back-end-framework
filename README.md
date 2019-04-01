@@ -2,6 +2,12 @@
 
 ## day11 2019-4-1
 
+### laravel/installer 
+
+    composer global require laravel/installer
+
+-> path setting : https://ithelp.ithome.com.tw/articles/10210574?sc=rss.qu
+
 ### basic routing 
 
 - get to the laravel folder 
