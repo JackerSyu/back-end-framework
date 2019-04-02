@@ -11,6 +11,9 @@
 -  Generate a resource controller class.
 `$ php artisian make:controller PostsController -r`
 
+### laravel 419 error -> CSRF (Cross Site Request Forgery)
+- `{{ csrf_field() }}` 
+- CSRF 就是在不同的 domain 底下卻能夠偽造出「使用者本人發出的 request」。要達成這件事也很簡單，因為瀏覽器的機制，你只要發送 request 給某個網域，就會把關聯的 cookie 一起帶上去。如果使用者是登入狀態，那這個 request 就理所當然包含了他的資訊（例如說 session id），這 request 看起來就像是使用者本人發出的。 [More -> By Huli](https://blog.techbridge.cc/2017/02/25/csrf-introduction/)
 
 
 ## day11 2019-4-1
