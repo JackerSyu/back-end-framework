@@ -1,5 +1,18 @@
 # back-end-framework
 
+
+## day12 2019-4-2
+
+### Notes
+
+- try this useful command like `$ php artisan help make:controller`
+
+
+-  Generate a resource controller class.
+`$ php artisian make:controller PostsController -r`
+
+
+
 ## day11 2019-4-1
 
 ### laravel/installer 
